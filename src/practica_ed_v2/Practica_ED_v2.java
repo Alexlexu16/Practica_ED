@@ -11,6 +11,39 @@ package practica_ed_v2;
  */
 public class Practica_ED_v2 {
 
+    public static boolean esVocal(char letra)
+    {
+        boolean loes = false;
+        
+        if( letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u' ||
+                letra == 'A' || letra == 'E' || letra == 'I' || letra == 'O' || letra == 'U')
+        {
+            loes = true;
+        }
+        
+        return loes;
+    }
+    
+    public static String cambiarVocalesMayuscula(String frase)
+    {
+        String frasenueva = "";
+        
+        for (int i = 0; i < frase.length(); i++) 
+        {
+            if( esVocal(frase.charAt(i)) )
+            {
+                String vocalnueva = "" + frase.charAt(i);
+                frasenueva += vocalnueva.toUpperCase();
+            }
+            else
+            {
+                frasenueva += frase.charAt(i);
+            }
+        }
+        
+        return frasenueva;
+    }
+    
     /**
      * @param args the command line arguments
      */
