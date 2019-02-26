@@ -5,6 +5,8 @@
  */
 package practica_ed_v2;
 
+import java.util.Scanner;
+
 /**
  *
  * @author alexlexu
@@ -43,12 +45,41 @@ public class Practica_ED_v2 {
         
         return frasenueva;
     }
+     public static String cambiarConsonantesMinuscula(String frase)
+    {
+        String frasenueva = "";
+        
+        for (int i = 0; i < frase.length(); i++) 
+        {
+            if( !esVocal(frase.charAt(i)) )
+            {
+                String vocalnueva = "" + frase.charAt(i);
+                frasenueva += vocalnueva.toLowerCase();
+            }
+            else
+            {
+                frasenueva += frase.charAt(i);
+            }
+        }
+        
+        return frasenueva;
+    }
     
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Scanner teclado = new Scanner(System.in);
+        String frase;
+        
+        System.out.println("Introduce una frase");
+        frase = teclado.nextLine();
+        
+        String resultado = cambiarVocalesMayuscula(frase);
+        resultado = cambiarConsonantesMinuscula(resultado);
+        
+        System.out.println("La frase final es: " + resultado);
     }
     
 }
